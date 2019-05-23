@@ -8,13 +8,18 @@ option {
 
 .container {
   width: 514px !important;
+  max-height: 300px !important;
   padding: 0 2.3rem;
 }
 
 #letters img {
-  width: 5.5rem;
-  height: auto;
   border: 1px solid black;
   padding: 0;
   float: right;
+  cursor: pointer;
+}
+
+img:hover,
+.bgBlue {
+  background: rgb(180, 180, 180);
 }
