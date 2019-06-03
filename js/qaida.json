@@ -1,6 +1,9 @@
 {
   "letterspage0": [
     {
+      "image": "firstpagetitle"
+    },
+    {
       "name": "alif",
       "image": "alif"
     },
@@ -123,6 +126,9 @@
   ],
 
   "letterspage1": [
+    {
+      "image": "pg1b/secondpagetitle"
+    },
     {
       "name": "alif",
       "image": "pg1b/alif"
@@ -581,6 +587,119 @@
     {
       "name": "fa",
       "image": "fa"
+    }
+  ],
+  "letterspage3": [
+    {
+      "name": "Ckaff",
+      "image": "caaf"
+    },
+    {
+      "name": "Noon",
+      "image": "woaw"
+    },
+    {
+      "name": "ckaafwoaw",
+      "image": "pg3/ckaafwoaw"
+    },
+    {
+      "name": "faawow",
+      "image": "pg3/faawow"
+    },
+    {
+      "name": "fackaaflaam",
+      "image": "pg3/fackaaflaam"
+    },
+    {
+      "name": "ckaaffaalaam",
+      "image": "pg3/ckaaffaalaam"
+    },
+    {
+      "name": "yaafaa",
+      "image": "pg3/yaafaa"
+    },
+    {
+      "name": "meem",
+      "image": "pg3/meem"
+    },
+    {
+      "name": "meemb",
+      "image": "pg3/meemb"
+    },
+    {
+      "name": "haameem",
+      "image": "pg3/haameem"
+    },
+    {
+      "name": "laammeem",
+      "image": "pg3/laammeem"
+    },
+    {
+      "name": "thaameem",
+      "image": "pg3/thaameem"
+    },
+    {
+      "name": "thaameemthaa",
+      "image": "pg3/thaameemthaa"
+    },
+    {
+      "image": "pg3/thirdpagetitle"
+    },
+    {
+      "name": "aliflaammeem",
+      "image": "pg3/aliflaammeem"
+    },
+    {
+      "name": "alifmeemswaad",
+      "image": "pg3/alifmeemswaad"
+    },
+    {
+      "name": "aliflaamraa",
+      "image": "pg3/aliflaamraa"
+    },
+    {
+      "name": "aliflaammeemraa",
+      "image": "pg3/aliflaammeemraa"
+    },
+    {
+      "name": "ckaafhayaaaynswaad",
+      "image": "pg3/ckaafhayaaaynswaad"
+    },
+    {
+      "name": "thwaahaa",
+      "image": "pg3/thwaahaa"
+    },
+    {
+      "name": "thwaseenmeem",
+      "image": "pg3/thwaseenmeem"
+    },
+    {
+      "name": "thwaaseen",
+      "image": "pg3/thwaaseen"
+    },
+    {
+      "name": "yaaseen",
+      "image": "pg3/yaaseen"
+    },
+    {
+      "name": "swaad",
+      "image": "pg3/swaad"
+    },
+    {
+      "name": "hameem",
+      "image": "pg3/hameemb"
+    },
+    {
+      "name": "hameemayngseenckaaf",
+      "image": "pg3/hameemayngseenckaaf"
+    },
+    {
+      "name": "ckaaf",
+      "image": "pg3/ckaaf"
+    },
+    {
+      "name": "noon",
+      "image": "pg3/noon"
     }
   ]
 }

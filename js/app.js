@@ -11,18 +11,53 @@ const storageCtrl = (function() {
       data.current = JSON.parse(localStorage.getItem('pageNumber'));
       letterCtrl.getLetters(data.current);
     },
-    setStorageLoopIndex: function(loopIndex, loopIndexCurrent) {
-      localStorage.setItem('loopIndex', JSON.stringify(loopIndex));
-      localStorage.setItem(
-        'loopIndexPageNumber',
-        JSON.stringify(loopIndexCurrent)
-      );
+    setStorageLoopIndex: function(loopIndex, currentPageIndex) {
+      const data = letterCtrl.getData();
+
+      const storeloopingIndex = {
+        loopingIndex: loopIndex,
+        loopingIndexPageNumber: currentPageIndex
+      };
+
+      if (localStorage.getItem('loopIndex') === null) {
+        localStorage.setItem('loopIndex', JSON.stringify(loopIndex));
+        localStorage.setItem(
+          'currentPageIndex',
+          JSON.stringify(currentPageIndex)
+        );
+        data.playIndexArr.push(storeloopingIndex);
+      } else {
+        data.playIndexArr.forEach(index => {
+          if (data.playIndexArr[currentPageIndex]) {
+            if (
+              data.playIndexArr[currentPageIndex] ===
+              data.playIndexArr[index.loopingIndexPageNumber]
+            ) {
+              index.loopingIndex = loopIndex;
+              index.loopingIndexPageNumber = currentPageIndex;
+            }
+          } else {
+            data.playIndexArr.push(storeloopingIndex);
+          }
+        });
+        localStorage.setItem(
+          'loopIndexArray',
+          JSON.stringify(data.playIndexArr)
+        );
+      }
     },
     getStorageLoopIndex: function(current) {
       const data = letterCtrl.getData();
+      const playIndexArray = JSON.parse(localStorage.getItem('loopIndexArray'));
+
       if (
+        localStorage.getItem('loopIndexArray') !== null &&
+        playIndexArray[current]
+      ) {
+        data.playIndex = playIndexArray[current].loopingIndex - 1;
+      } else if (
         localStorage.getItem('loopIndex') !== null &&
-        current === JSON.parse(localStorage.getItem('loopIndexPageNumber'))
+        localStorage.getItem('loopIndexArray') === null
       ) {
         data.playIndex = JSON.parse(localStorage.getItem('loopIndex')) - 1;
       } else {
@@ -98,6 +133,7 @@ const uiCtrl = (function() {
     image: 'img',
     playBtn: '#playBtn',
     stopBtn: '#stopBtn',
+
     setBookMark: '#setBookMark',
     getBookMark: '#getBookMark'
   };
@@ -136,16 +172,38 @@ const uiCtrl = (function() {
     // Change the letter sizes depending on current page
     currentPageLetterSize: function(current) {
       const data = letterCtrl.getData();
+      const letterImg = document.getElementsByTagName(uiSelectors.image);
+      const img = Array.from(letterImg);
       // Change letter size depending on page
       if (data.letters[current] === data.letters[0]) {
         // Page 0 letter sizes
-        uiCtrl.changeLetterSize('5.5rem', 'auto');
+        uiCtrl.changeLetterSize('5.5rem', '4.71rem');
+        letterImg[0].style.width = '99.9%';
+        letterImg[0].style.padding = '5px';
       } else if (data.letters[current] === data.letters[1]) {
         // Page 1 letter sizes
-        uiCtrl.changeLetterSize('4.58rem', '3.67rem');
+        uiCtrl.changeLetterSize('4.58rem', '3.3rem');
+        letterImg[0].style.width = '99.9%';
+        letterImg[0].style.padding = '5px';
       } else if (data.letters[current] === data.letters[2]) {
         // Page 2 letter sizes
         uiCtrl.changeLetterSize('4.58rem', '3.3rem');
+      } else if (data.letters[current] === data.letters[3]) {
+        // Page 3
+        // All letter sizes
+        uiCtrl.changeLetterSize('5.5rem', '4.125rem');
+        letterImg[10].style.width = '9.16rem';
+        letterImg[11].style.width = '9.16rem';
+        letterImg[12].style.width = '9.16rem';
+        letterImg[13].style.width = '99.9%';
+        letterImg[13].style.padding = '5px';
+        const secondHalfLetters = img.slice(14);
+        secondHalfLetters.forEach(letters => {
+          letters.style.width = '6.87rem';
+        });
+        letterImg[18].style.width = '13.75rem';
+
+        letterImg[25].style.width = '13.75rem';
       }
     },
     highlightLetter: function(index) {
@@ -292,7 +350,8 @@ const appCtrl = (function(letterCtrl, uiCtrl) {
     const data = letterCtrl.getData();
     data.playIndex = 0;
     localStorage.removeItem('loopIndex');
-    localStorage.removeItem('loopIndexPageNumber');
+    localStorage.removeItem('currentPageIndex');
+    localStorage.removeItem('loopIndexArray');
     data.loopSound.pause();
     uiCtrl.playIcon();
   };
