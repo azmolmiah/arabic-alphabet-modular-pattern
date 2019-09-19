@@ -133,7 +133,6 @@ const uiCtrl = (function() {
     image: 'img',
     playBtn: '#playBtn',
     stopBtn: '#stopBtn',
-
     setBookMark: '#setBookMark',
     getBookMark: '#getBookMark'
   };
@@ -307,7 +306,7 @@ const appCtrl = (function(letterCtrl, uiCtrl) {
     uiCtrl.bookMarkIcon(storageCtrl.getData(), data.current);
   };
 
-  // Get book mark of just the page number and feed to the output
+  // Get bookmark of just the page number and feed to the output
   const getBookMark = function() {
     storageCtrl.getStorageLetters();
     const data = letterCtrl.getData();
@@ -346,6 +345,7 @@ const appCtrl = (function(letterCtrl, uiCtrl) {
     }
   };
 
+  // Resets the play index to 0 or start
   const stopLoop = function() {
     const data = letterCtrl.getData();
     data.playIndex = 0;

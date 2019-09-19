@@ -1,6 +1,7 @@
 {
   "letterspage0": [
     {
+      "name": "firstpagetitle",
       "image": "firstpagetitle"
     },
     {
@@ -127,6 +128,7 @@
 
   "letterspage1": [
     {
+      "name": "pg1/pagetitle",
       "image": "pg1b/secondpagetitle"
     },
     {
@@ -134,19 +136,19 @@
       "image": "pg1b/alif"
     },
     {
-      "name": "laamalif",
+      "name": "pg1/laamalif",
       "image": "pg1b/laamalif"
     },
     {
-      "name": "laamalif",
+      "name": "pg1/laamalif",
       "image": "pg1b/laamalifb"
     },
     {
-      "name": "baaalif",
+      "name": "pg1/baaalif",
       "image": "pg1b/baaalif"
     },
     {
-      "name": "laamalif",
+      "name": "pg1/laamalif",
       "image": "pg1b/laamalifc"
     },
     {
@@ -154,19 +156,19 @@
       "image": "pg1b/laam"
     },
     {
-      "name": "laamalif",
+      "name": "pg1/laamalif",
       "image": "pg1b/laamalifd"
     },
     {
-      "name": "haraa",
+      "name": "pg1/laamalif",
       "image": "pg1b/haraa"
     },
     {
-      "name": "laamalif",
+      "name": "pg1/laamalif",
       "image": "pg1b/laamalifc"
     },
     {
-      "name": "baaalifbaa",
+      "name": "pg1/baalaambaa",
       "image": "pg1b/baaalifbaa"
     },
     {
@@ -178,27 +180,27 @@
       "image": "pg1b/kafb"
     },
     {
-      "name": "kaafbaa",
+      "name": "pg1/kaafbaa",
       "image": "pg1b/kafbaa"
     },
     {
-      "name": "kaafbaa",
+      "name": "pg1/kaafbaa",
       "image": "pg1b/kafbaab"
     },
     {
-      "name": "kaafalif",
+      "name": "pg1/kaafalif",
       "image": "pg1b/kafalif"
     },
     {
-      "name": "kaafalif",
+      "name": "pg1/kaafalif",
       "image": "pg1b/kafalifb"
     },
     {
-      "name": "baakaafthaa",
+      "name": "pg1/baakaafthaa",
       "image": "pg1b/baakafthaa"
     },
     {
-      "name": "thaakaafthsaa",
+      "name": "pg1/thaakaafthsaa",
       "image": "pg1b/thaakafthsaa"
     },
     {
@@ -222,127 +224,127 @@
       "image": "yaa"
     },
     {
-      "name": "baaalif",
+      "name": "pg1/baaalif",
       "image": "pg1b/baaalif"
     },
     {
-      "name": "noonalif",
+      "name": "pg1/noonalif",
       "image": "pg1b/noonalif"
     },
     {
-      "name": "thaaalif",
+      "name": "pg1/thaaalif",
       "image": "pg1b/thaaalif"
     },
     {
-      "name": "yaaalif",
+      "name": "pg1/yaaalif",
       "image": "pg1b/yaaalif"
     },
     {
-      "name": "thsaaalif",
+      "name": "pg1/thsaalif",
       "image": "pg1b/thsaaalif"
     },
     {
-      "name": "baaseen",
+      "name": "pg1/baameem",
       "image": "pg1b/baaseen"
     },
     {
-      "name": "yaaseen",
+      "name": "pg1/yaaseen",
       "image": "pg1b/yaaseen"
     },
     {
-      "name": "noonseen",
+      "name": "pg1/noonseen",
       "image": "pg1b/noonseen"
     },
     {
-      "name": "thaaseen",
+      "name": "pg1/thaaseen",
       "image": "pg1b/thaaseen"
     },
     {
-      "name": "thsaaseen",
+      "name": "pg1/thsaaseen",
       "image": "pg1b/thsaaseen"
     },
     {
-      "name": "thsaajeem",
+      "name": "pg1/thsaajeem",
       "image": "pg1b/thsaajeem"
     },
     {
-      "name": "thaaha",
+      "name": "pg1/thaahaa",
       "image": "pg1b/thaaha"
     },
     {
-      "name": "noonha",
+      "name": "pg1/noonkhaa",
       "image": "pg1b/noonha"
     },
     {
-      "name": "yaaha",
+      "name": "pg1/yaahaa",
       "image": "pg1b/yaaha"
     },
     {
-      "name": "baajeem",
+      "name": "pg1/baajeem",
       "image": "pg1b/baajeem"
     },
     {
-      "name": "yaameem",
+      "name": "pg1/yaameem",
       "image": "pg1b/yaameem"
     },
     {
-      "name": "baameem",
+      "name": "pg1/baameem",
       "image": "pg1b/baameem"
     },
     {
-      "name": "noonmeem",
+      "name": "pg1/noonmeem",
       "image": "pg1b/noonmeem"
     },
     {
-      "name": "thaameem",
+      "name": "pg1/thaameem",
       "image": "pg1b/thaameem"
     },
     {
-      "name": "thsaameem",
+      "name": "pg1/thsaameem",
       "image": "pg1b/thsaameem"
     },
     {
-      "name": "baayaa",
+      "name": "pg1/baayaa",
       "image": "pg1b/baayaa"
     },
     {
-      "name": "yaayaa",
+      "name": "pg1/yaayaa",
       "image": "pg1b/yaayaa"
     },
     {
-      "name": "noonyaa",
+      "name": "pg1/noonyaa",
       "image": "pg1b/noonyaa"
     },
     {
-      "name": "thaayaa",
+      "name": "pg1/thaayaa",
       "image": "pg1b/thaayaa"
     },
     {
-      "name": "thsaayaa",
+      "name": "pg1/thsaayaa",
       "image": "pg1b/thsaayaa"
     },
     {
-      "name": "noonbaalaam",
+      "name": "pg1/noonbaalaam",
       "image": "pg1b/noonbaalaam"
     },
     {
-      "name": "thaanoonlaam",
+      "name": "pg1/thaanoonlaam",
       "image": "pg1b/thaanoonlaam"
     },
     {
-      "name": "baayaalaam",
+      "name": "pg1/baayaalaam",
       "image": "pg1b/baayaalaam"
     },
     {
-      "name": "yaathaalaam",
+      "name": "pg1/yaathaalaam",
       "image": "pg1b/yaathaalaam"
     },
     {
-      "name": "thsaathsaalaam",
+      "name": "pg1/thsaathsaalaam",
       "image": "pg1b/thsaathsaalaam"
     },
     {
-      "name": "noonbaanoon",
+      "name": "pg1/noonbaanoon",
       "image": "pg1b/noonbaanoon"
     }
   ],
