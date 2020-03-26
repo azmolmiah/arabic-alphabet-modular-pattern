@@ -17,6 +17,7 @@ option {
   padding: 0;
   float: right;
   cursor: pointer;
+  touch-action: manipulation !important;
 }
 
 img:hover,
