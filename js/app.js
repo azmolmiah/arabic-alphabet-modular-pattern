@@ -4,11 +4,11 @@ const storageCtrl = (function() {
   return {
     setStorageLetters: function() {
       const data = letterCtrl.getData();
-      localStorage.setItem('pageNumber', JSON.stringify(data.current));
+      localStorage.setItem("pageNumber", JSON.stringify(data.current));
     },
     getStorageLetters: function() {
       const data = letterCtrl.getData();
-      data.current = JSON.parse(localStorage.getItem('pageNumber'));
+      data.current = JSON.parse(localStorage.getItem("pageNumber"));
       letterCtrl.getLetters(data.current);
     },
     setStorageLoopIndex: function(loopIndex, currentPageIndex) {
@@ -19,10 +19,10 @@ const storageCtrl = (function() {
         loopingIndexPageNumber: currentPageIndex
       };
 
-      if (localStorage.getItem('loopIndex') === null) {
-        localStorage.setItem('loopIndex', JSON.stringify(loopIndex));
+      if (localStorage.getItem("loopIndex") === null) {
+        localStorage.setItem("loopIndex", JSON.stringify(loopIndex));
         localStorage.setItem(
-          'currentPageIndex',
+          "currentPageIndex",
           JSON.stringify(currentPageIndex)
         );
         data.playIndexArr.push(storeloopingIndex);
@@ -41,31 +41,31 @@ const storageCtrl = (function() {
           }
         });
         localStorage.setItem(
-          'loopIndexArray',
+          "loopIndexArray",
           JSON.stringify(data.playIndexArr)
         );
       }
     },
     getStorageLoopIndex: function(current) {
       const data = letterCtrl.getData();
-      const playIndexArray = JSON.parse(localStorage.getItem('loopIndexArray'));
+      const playIndexArray = JSON.parse(localStorage.getItem("loopIndexArray"));
 
       if (
-        localStorage.getItem('loopIndexArray') !== null &&
+        localStorage.getItem("loopIndexArray") !== null &&
         playIndexArray[current]
       ) {
         data.playIndex = playIndexArray[current].loopingIndex - 1;
       } else if (
-        localStorage.getItem('loopIndex') !== null &&
-        localStorage.getItem('loopIndexArray') === null
+        localStorage.getItem("loopIndex") !== null &&
+        localStorage.getItem("loopIndexArray") === null
       ) {
-        data.playIndex = JSON.parse(localStorage.getItem('loopIndex')) - 1;
+        data.playIndex = JSON.parse(localStorage.getItem("loopIndex")) - 1;
       } else {
         data.playIndex = 0;
       }
     },
     getData: function() {
-      const current = JSON.parse(localStorage.getItem('pageNumber'));
+      const current = JSON.parse(localStorage.getItem("pageNumber"));
       return current;
     }
   };
@@ -82,7 +82,7 @@ const letterCtrl = (function() {
   const data = {
     letters: letters,
     current: 0,
-    output: '',
+    output: "",
     loopSound: new Audio(),
     playIndex: 0,
     playIndexArr: []
@@ -92,7 +92,7 @@ const letterCtrl = (function() {
   return {
     // Output the letters from data
     getLetters: async function(pageNum) {
-      const response = await fetch('js/qaida.json');
+      const response = await fetch("js/qaida.json");
       const letters = await response.json();
       const obj = Object.values(letters);
       data.letters = obj;
@@ -126,15 +126,15 @@ const letterCtrl = (function() {
 // ================================= UI CONTROLLER ============================================== //
 const uiCtrl = (function() {
   const uiSelectors = {
-    letters: '#letters',
-    option: '#options',
-    next: '#next',
-    prev: '#prev',
-    image: 'img',
-    playBtn: '#playBtn',
-    stopBtn: '#stopBtn',
-    setBookMark: '#setBookMark',
-    getBookMark: '#getBookMark'
+    letters: "#letters",
+    option: "#options",
+    next: "#next",
+    prev: "#prev",
+    image: "img",
+    playBtn: "#playBtn",
+    stopBtn: "#stopBtn",
+    setBookMark: "#setBookMark",
+    getBookMark: "#getBookMark"
   };
 
   // Public Methods and variables
@@ -144,9 +144,7 @@ const uiCtrl = (function() {
       let output = letterCtrl.getData().output;
       const currentPage = document.querySelector(uiSelectors.letters);
       for (let i = 0; i < pgOne.letters.length; i++) {
-        output += `<img id="${pgOne.letters[i].name}" src="img/${
-          pgOne.letters[i].image
-        }.png">`;
+        output += `<img id="${pgOne.letters[i].name}" src="img/${pgOne.letters[i].image}.png">`;
         currentPage.innerHTML = output;
       }
     },
@@ -176,66 +174,66 @@ const uiCtrl = (function() {
       // Change letter size depending on page
       if (data.letters[current] === data.letters[0]) {
         // Page 0 letter sizes
-        uiCtrl.changeLetterSize('5.5rem', '4.71rem');
-        letterImg[0].style.width = '99.9%';
-        letterImg[0].style.padding = '5px';
+        uiCtrl.changeLetterSize("5.5rem", "4.71rem");
+        letterImg[0].style.width = "99.9%";
+        letterImg[0].style.padding = "5px";
       } else if (data.letters[current] === data.letters[1]) {
         // Page 1 letter sizes
-        uiCtrl.changeLetterSize('4.58rem', '3.3rem');
-        letterImg[0].style.width = '99.9%';
-        letterImg[0].style.padding = '5px';
+        uiCtrl.changeLetterSize("4.58rem", "3.3rem");
+        letterImg[0].style.width = "99.9%";
+        letterImg[0].style.padding = "5px";
       } else if (data.letters[current] === data.letters[2]) {
         // Page 2 letter sizes
-        uiCtrl.changeLetterSize('4.58rem', '3.3rem');
+        uiCtrl.changeLetterSize("4.58rem", "3.3rem");
       } else if (data.letters[current] === data.letters[3]) {
         // Page 3
         // All letter sizes
-        uiCtrl.changeLetterSize('5.5rem', '4.125rem');
-        letterImg[10].style.width = '9.16rem';
-        letterImg[11].style.width = '9.16rem';
-        letterImg[12].style.width = '9.16rem';
-        letterImg[13].style.width = '99.9%';
-        letterImg[13].style.padding = '5px';
+        uiCtrl.changeLetterSize("5.5rem", "4.125rem");
+        letterImg[10].style.width = "9.16rem";
+        letterImg[11].style.width = "9.16rem";
+        letterImg[12].style.width = "9.16rem";
+        letterImg[13].style.width = "99.9%";
+        letterImg[13].style.padding = "5px";
         const secondHalfLetters = img.slice(14);
         secondHalfLetters.forEach(letters => {
-          letters.style.width = '6.87rem';
+          letters.style.width = "6.87rem";
         });
-        letterImg[18].style.width = '13.75rem';
+        letterImg[18].style.width = "13.75rem";
 
-        letterImg[25].style.width = '13.75rem';
+        letterImg[25].style.width = "13.75rem";
       }
     },
     highlightLetter: function(index) {
       const letterImg = document.getElementsByTagName(uiSelectors.image);
       const img = Array.from(letterImg);
-      img[index].classList.add('bgBlue');
+      img[index].classList.add("bgBlue");
       setTimeout(function() {
-        img[index--].classList.remove('bgBlue');
+        img[index--].classList.remove("bgBlue");
       }, 1900);
     },
     pauseIcon: function() {
-      document.querySelector(uiSelectors.playBtn).classList.remove('fa-play');
-      document.querySelector(uiSelectors.playBtn).classList.add('fa-pause');
+      document.querySelector(uiSelectors.playBtn).classList.remove("fa-play");
+      document.querySelector(uiSelectors.playBtn).classList.add("fa-pause");
     },
     playIcon: function() {
-      document.querySelector(uiSelectors.playBtn).classList.remove('fa-pause');
-      document.querySelector(uiSelectors.playBtn).classList.add('fa-play');
+      document.querySelector(uiSelectors.playBtn).classList.remove("fa-pause");
+      document.querySelector(uiSelectors.playBtn).classList.add("fa-play");
     },
     bookMarkIcon: function(localStorageCurrent, current) {
       if (localStorageCurrent !== current) {
         document
           .querySelector(uiSelectors.setBookMark)
-          .classList.remove('fas', 'fa-bookmark');
+          .classList.remove("fas", "fa-bookmark");
         document
           .querySelector(uiSelectors.setBookMark)
-          .classList.add('far', 'fa-bookmark');
+          .classList.add("far", "fa-bookmark");
       } else {
         document
           .querySelector(uiSelectors.setBookMark)
-          .classList.remove('far', 'fa-bookmark');
+          .classList.remove("far", "fa-bookmark");
         document
           .querySelector(uiSelectors.setBookMark)
-          .classList.add('fas', 'fa-bookmark');
+          .classList.add("fas", "fa-bookmark");
         document.querySelector(
           uiSelectors.option
         ).selectedIndex = storageCtrl.getData();
@@ -256,47 +254,47 @@ const appCtrl = (function(letterCtrl, uiCtrl) {
 
     // Get next letter sound when current letter sound ends
     const data = letterCtrl.getData();
-    data.loopSound.addEventListener('ended', nextSound);
+    data.loopSound.addEventListener("ended", nextSound);
 
     // init Loop
     document
       .querySelector(uiSelectors.playBtn)
-      .addEventListener('click', initLoop);
+      .addEventListener("click", initLoop);
 
     // Stop Loop or Restart loop from beginning
     document
       .querySelector(uiSelectors.stopBtn)
-      .addEventListener('click', stopLoop);
+      .addEventListener("click", stopLoop);
 
     //Get each letter sound
     document
       .querySelector(uiSelectors.letters)
-      .parentElement.addEventListener('click', individualSound);
+      .parentElement.addEventListener("mousedown", individualSound);
 
     // Option
     document
       .querySelector(uiSelectors.option)
-      .addEventListener('change', selectOptions);
+      .addEventListener("change", selectOptions);
 
     // Get next Button
     document
       .querySelector(uiSelectors.next)
-      .addEventListener('click', nextPage);
+      .addEventListener("click", nextPage);
 
     // Get prev button
     document
       .querySelector(uiSelectors.prev)
-      .addEventListener('click', prevPage);
+      .addEventListener("click", prevPage);
 
     // Set local storage on current page
     document
       .querySelector(uiSelectors.setBookMark)
-      .addEventListener('click', setBookMark);
+      .addEventListener("click", setBookMark);
 
     // Get local storage for saved page index
     document
       .querySelector(uiSelectors.getBookMark)
-      .addEventListener('click', getBookMark);
+      .addEventListener("click", getBookMark);
   };
 
   // Set book mark of just the page number in local storage
@@ -349,9 +347,9 @@ const appCtrl = (function(letterCtrl, uiCtrl) {
   const stopLoop = function() {
     const data = letterCtrl.getData();
     data.playIndex = 0;
-    localStorage.removeItem('loopIndex');
-    localStorage.removeItem('currentPageIndex');
-    localStorage.removeItem('loopIndexArray');
+    localStorage.removeItem("loopIndex");
+    localStorage.removeItem("currentPageIndex");
+    localStorage.removeItem("loopIndexArray");
     data.loopSound.pause();
     uiCtrl.playIcon();
   };
